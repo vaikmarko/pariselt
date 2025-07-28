@@ -326,6 +326,32 @@
             font-weight: 600;
         }
         
+        /* Booking Section */
+        .booking {
+            padding: 6rem 2rem;
+            background: var(--bg-white);
+            text-align: center;
+        }
+        
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .booking-calendar {
+            margin-top: 3rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px var(--shadow);
+            background: white;
+        }
+        
+        .booking-calendar iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+        }
+        
         /* Video Section */
         .video-section {
             padding: 6rem 2rem;
@@ -524,6 +550,7 @@
             <ul class="nav-links">
                 <li><a href="#about">Minust</a></li>
                 <li><a href="#services">Teenused</a></li>
+                <li><a href="#booking">Broneeri</a></li>
                 <li><a href="#video">Video</a></li>
                 <li><a href="#faq">KKK</a></li>
                 <li><a href="#contact">Kontakt</a></li>
@@ -538,7 +565,7 @@
                 <h1>Räägime päriselt</h1>
                 <p class="subtitle">Psühholoogiline nõustaja Tallinnas</p>
                 <p class="description">Olen Agnes Vaik ja aitan Sul leida rahu, kui elu tundub liiga raske. Kui tunned stressi, ärevust, masendust või lihtsalt ei tea, kuidas edasi minna - olen siin, et aidata. Esimene kohtumine on tasuta.</p>
-                <a href="#contact" class="cta-button">Broneeri tasuta esmatutvus</a>
+                <a href="#booking" class="cta-button">Broneeri tasuta esmatutvus</a>
             </div>
             <div class="hero-image">
                 <div class="profile-photo">
@@ -604,6 +631,24 @@
                     <h3 class="service-title">Süvaprotsess</h3>
                     <p class="service-description">Erilised meetodid, mis aitavad Sul jõuda sügavamale tasandile enda sees ja leida vastuseid, mida tavaline rääkimine ei paku.</p>
                     <div class="service-price">Kokkuleppel</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <h2 class="section-title">Broneeri kohtumine</h2>
+            <p class="section-subtitle">Vali sobiv aeg ja broneeri oma esimene tasuta esmatutvus või nõustamisseanss</p>
+            
+            <div class="booking-container">
+                <div class="booking-calendar">
+                    <iframe 
+                        src="https://calendly.com/agnes-pariselt" 
+                        title="Broneeri kohtumine Agnesega"
+                        frameborder="0">
+                    </iframe>
                 </div>
             </div>
         </div>
