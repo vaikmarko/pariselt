@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>päriselt. - Räägime päriselt</title>
+    <title>Agnes - Transpersonaalne Nõustaja | päriselt.ee</title>
+    <meta name="description" content="Transpersonaalne kehale suunatud nõustaja Tallinnas. Turvaline ruum oma enese avastamiseks ja kasvamiseks.">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
@@ -16,207 +17,151 @@
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #2c3e50;
-            overflow-x: hidden;
+            color: #2d3748;
+            background-color: #fafafa;
         }
         
-        /* Enhanced Hero Section */
+        /* Professional Color Palette */
+        :root {
+            --primary: #4a5568;
+            --primary-light: #718096;
+            --secondary: #38a169;
+            --accent: #ed8936;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --border: #e2e8f0;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Header */
+        .header {
+            background: var(--bg-white);
+            box-shadow: 0 2px 10px var(--shadow);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, #f7f5f3 0%, #faf8f5 50%, #fcfaf8 100%);
+            background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
+            padding: 8rem 2rem 4rem;
             position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(99, 102, 106, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(148, 137, 124, 0.06) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(99, 102, 106, 0.03) 0%, transparent 50%);
-            pointer-events: none;
-            animation: float 20s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(1deg); }
         }
         
         .hero-content {
-            max-width: 900px;
-            z-index: 1;
-            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
         
-        .main-heading {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            color: #2c3e50;
-            margin-bottom: 2rem;
+        .hero-text h1 {
+            font-size: 3.5rem;
             font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            background: linear-gradient(135deg, #2c3e50, #636669);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 1s ease-out;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
         
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            color: #636669;
-            margin-bottom: 3rem;
-            font-weight: 300;
-            line-height: 1.8;
-            animation: fadeInUp 1s ease-out 0.2s both;
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
         
-        .profile-section {
-            margin: 3rem 0;
-            animation: fadeInUp 1s ease-out 0.4s both;
+        .hero-text .description {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(56, 161, 105, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #2f855a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 161, 105, 0.4);
+        }
+        
+        .hero-image {
+            text-align: center;
         }
         
         .profile-photo {
-            width: 200px;
-            height: 200px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
-            margin: 0 auto 2rem;
-            background: linear-gradient(45deg, #94897c, #636669);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: #fff;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-            border: 4px solid rgba(255,255,255,0.9);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
+            margin: 0 auto;
             overflow: hidden;
+            box-shadow: 0 20px 40px var(--shadow);
+            border: 4px solid white;
         }
         
-        .profile-photo::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            transition: transform 0.6s ease;
-        }
-        
-        .profile-photo:hover::before {
-            transform: rotate(45deg) translate(50%, 50%);
-        }
-        
-        .profile-photo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-        }
-        
-        .therapist-name {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .therapist-title {
-            font-size: 1.1rem;
-            color: #94897c;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-        
-        .cta-primary, .cta-secondary {
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-primary {
-            background: linear-gradient(45deg, #636669, #94897c);
-            color: white;
-            box-shadow: 0 4px 20px rgba(99, 102, 106, 0.25);
-        }
-        
-        .cta-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .profile-photo img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
+            object-fit: cover;
         }
         
-        .cta-primary:hover::before {
-            left: 100%;
-        }
-        
-        .cta-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(99, 102, 106, 0.35);
-        }
-        
-        .cta-secondary {
-            background: rgba(255,255,255,0.9);
-            color: #2c3e50;
-            border: 2px solid #636669;
-        }
-        
-        .cta-secondary:hover {
-            background: #636669;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        /* Enhanced About Section */
+        /* About Section */
         .about {
             padding: 6rem 2rem;
-            background: #fff;
-            position: relative;
-        }
-        
-        .about::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #94897c, transparent);
+            background: var(--bg-white);
         }
         
         .container {
@@ -225,391 +170,144 @@
         }
         
         .section-title {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            color: #94897c;
-            text-align: center;
-            margin-bottom: 3rem;
+            font-size: 2.5rem;
             font-weight: 600;
-            position: relative;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 1rem;
         }
         
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(45deg, #636669, #94897c);
-            border-radius: 2px;
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .about-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
         
         .about-image {
             width: 100%;
-            max-width: 400px;
             height: 500px;
-            border-radius: 20px;
-            background: linear-gradient(45deg, #94897c, #636669);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.1rem;
-            text-align: center;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
+            border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 20px 40px var(--shadow);
         }
         
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-        
-        .about-image:hover::before {
-            transform: translateX(100%);
-        }
-        
-        .about-image:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .about-text {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #4a4a4a;
+            color: var(--text-dark);
         }
         
         .about-text p {
             margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
         }
-        
-        .about-text p:nth-child(1) { animation-delay: 0.2s; }
-        .about-text p:nth-child(2) { animation-delay: 0.4s; }
-        .about-text p:nth-child(3) { animation-delay: 0.6s; }
         
         .highlight {
-            color: #94897c;
+            color: var(--secondary);
             font-weight: 600;
-            position: relative;
         }
         
-        .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(45deg, #94897c, #636669);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .highlight:hover::after {
-            transform: scaleX(1);
-        }
-        
-        /* Enhanced Services Section */
+        /* Services Section */
         .services {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #f7f5f3 0%, #faf8f5 100%);
-            position: relative;
-        }
-        
-        .services::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #94897c, transparent);
+            background: var(--bg-light);
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
         
         .service-card {
-            background: rgba(255,255,255,0.9);
+            background: var(--bg-white);
             padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(45deg, #636669, #94897c);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .service-card:hover::before {
-            transform: scaleX(1);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border);
         }
         
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px var(--shadow);
         }
         
         .service-icon {
             width: 60px;
             height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #636669, #94897c);
+            border-radius: 12px;
+            background: var(--secondary);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
             color: white;
-            transition: transform 0.3s ease;
-        }
-        
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
         }
         
         .service-title {
             font-size: 1.4rem;
-            color: #2c3e50;
+            color: var(--primary);
             margin-bottom: 1rem;
             font-weight: 600;
         }
         
         .service-description {
-            color: #636669;
+            color: var(--text-light);
             line-height: 1.6;
             margin-bottom: 1.5rem;
         }
         
         .service-price {
-            font-size: 1.2rem;
-            color: #94897c;
+            font-size: 1.3rem;
+            color: var(--secondary);
             font-weight: 600;
         }
         
-        /* Enhanced Video Section */
+        /* Video Section */
         .video-section {
             padding: 6rem 2rem;
-            background: #fff;
+            background: var(--bg-white);
             text-align: center;
-            position: relative;
-        }
-        
-        .video-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #94897c, transparent);
         }
         
         .video-container {
             max-width: 800px;
-            margin: 2rem auto;
-            border-radius: 20px;
+            margin: 2rem auto 0;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-        
-        .video-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        .video-container:hover::before {
-            transform: translateX(100%);
-        }
-        
-        .video-container:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            box-shadow: 0 20px 40px var(--shadow);
         }
         
         .video-container iframe {
             display: block;
-            border-radius: 20px;
-        }
-        
-        /* Enhanced Booking Section */
-        .booking {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-        
-        .booking::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #f7f5f3, transparent);
-        }
-        
-        .booking-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .booking .section-title {
-            color: #f7f5f3;
-        }
-        
-        .booking .section-title::after {
-            background: linear-gradient(45deg, #f7f5f3, #94897c);
-        }
-        
-        .booking-form {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 20px;
-            margin-top: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #f7f5f3;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
             width: 100%;
-            padding: 1rem;
-            border: none;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.9);
-            color: #2c3e50;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            height: 450px;
         }
         
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            background: rgba(255,255,255,1);
-            box-shadow: 0 0 0 3px rgba(148, 137, 124, 0.3);
-        }
-        
-        .form-group textarea {
-            height: 100px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background: linear-gradient(45deg, #636669, #94897c);
-            color: white;
-            border: none;
-            padding: 1rem 3rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .submit-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .submit-btn:hover::before {
-            left: 100%;
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(99, 102, 106, 0.3);
-        }
-        
-        /* Enhanced Contact Section */
+        /* Contact Section */
         .contact {
-            padding: 4rem 2rem;
-            background: #f7f5f3;
+            padding: 6rem 2rem;
+            background: var(--bg-light);
             text-align: center;
-            position: relative;
-        }
-        
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #94897c, transparent);
         }
         
         .contact-info {
@@ -624,64 +322,55 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            color: #2c3e50;
-            transition: transform 0.3s ease;
-        }
-        
-        .contact-item:hover {
-            transform: translateY(-2px);
+            color: var(--text-dark);
+            font-size: 1.1rem;
         }
         
         .contact-icon {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #636669, #94897c);
+            background: var(--secondary);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            transition: transform 0.3s ease;
+            font-size: 1.2rem;
         }
         
-        .contact-item:hover .contact-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-        
-        /* Enhanced Footer */
+        /* Footer */
         .footer {
-            background: #2c3e50;
+            background: var(--primary);
             color: white;
             text-align: center;
-            padding: 2rem;
-            position: relative;
+            padding: 3rem 2rem;
         }
         
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #f7f5f3, transparent);
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .footer-logo {
-            font-family: 'Inter', sans-serif;
             font-size: 1.8rem;
-            color: #f7f5f3;
-            margin-bottom: 1rem;
             font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-text {
+            opacity: 0.8;
+            line-height: 1.6;
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .main-heading {
-                font-size: 2.5rem;
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
             }
             
-            .logo {
+            .hero-text h1 {
                 font-size: 2.5rem;
             }
             
@@ -690,9 +379,8 @@
                 gap: 2rem;
             }
             
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .nav-links {
+                display: none;
             }
             
             .services-grid {
@@ -709,54 +397,35 @@
         html {
             scroll-behavior: smooth;
         }
-        
-        /* Enhanced Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in {
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        /* Loading animation */
-        .loading {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-        
-        .loading.loaded {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">Agnes</div>
+            <ul class="nav-links">
+                <li><a href="#about">Minust</a></li>
+                <li><a href="#services">Teenused</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="main-heading">Räägime päriselt.</h1>
-            <p class="hero-subtitle">Ruumi, kus võid vabalt olla ilma maskideta.<br>Teekond, mis äratab ja aitab tuua tagasi koju – enda juurde.</p>
-            
-            <div class="profile-section">
-                <div class="profile-photo">
-                    <img src="images/agnes-portrait.jpg" alt="Agnes - Transpersonaalne kehale suunatud nõustaja" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-                </div>
-                <h2 class="therapist-name">Agnes</h2>
-                <p class="therapist-title">Transpersonaalne kehale suunatud nõustaja</p>
+            <div class="hero-text">
+                <h1>Turvaline ruum oma enese avastamiseks</h1>
+                <p class="subtitle">Transpersonaalne kehale suunatud nõustaja Tallinnas</p>
+                <p class="description">Olen siin, et aidata Sul leida sisemist rahu ja tasakaalu. Koos loome turvalise ruumi, kus saad olla täielikult sina ise ja avastada oma tõelist potentsiaali.</p>
+                <a href="#contact" class="cta-button">Broneeri esmatutvus</a>
             </div>
-            
-            <div class="cta-buttons">
-                <a href="#booking" class="cta-primary">Broneeri vestlus</a>
-                <a href="#services" class="cta-secondary">Tutvu teenustega</a>
+            <div class="hero-image">
+                <div class="profile-photo">
+                    <img src="images/agnes-portrait.jpg" alt="Agnes - Transpersonaalne nõustaja">
+                </div>
             </div>
         </div>
     </section>
@@ -764,17 +433,57 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">Mina hoian ruumi – Sina saad olla turvaliselt sina ise</h2>
+            <h2 class="section-title">Minu lähenemine</h2>
+            <p class="section-subtitle">Üle 10 aasta kogemust inimestega töötamisel sügaval tasandil</p>
+            
             <div class="about-content">
                 <div class="about-image">
-                    <img src="images/agnes-landscape.jpg" alt="Agnes - Transpersonaalne kehale suunatud nõustaja" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                    <img src="images/agnes-landscape.jpg" alt="Agnes töötab oma nõustamiskabinetis">
                 </div>
                 <div class="about-text">
-                    <p>Olen transpersonaalne kehale suunatud nõustaja, rohkem kui <span class="highlight">10 aastat töötanud inimestega sügaval tasandil</span> – südame, keha ja elu ristteel. Olen olnud nii väljaõppes olevate terapeutide praktikamentor kui ka toetaja neile, kes otsivad sisemist rahu või omaenese eluloo tähendusi ja suunda.</p>
+                    <p>Olen transpersonaalne kehale suunatud nõustaja, kes on rohkem kui <span class="highlight">10 aastat töötanud inimestega</span> nende sügavaimate valude ja küsimustega. Minu lähenemine põhineb usus, et iga inimene omab juba kõiki vastuseid oma sees.</p>
                     
-                    <p>Minu tee terapeudiks ei tulnud kergelt. Läbi enda valude, murdumiste ja taastõusmistemiste olen kogenud, mida tähendab julgeda vaadata otsa sellele, mis tundub liiga raske. <span class="highlight">Just seetõttu oskan ka Sind hoida.</span> Mitte hinnates ega nõu andes, vaid olles Sinuga hoolivalt kohal.</p>
+                    <p>Minu tee nõustajaks ei olnud kergelt tulnud. Läbi enda valude ja taastõusmistemiste olen kogenud, mida tähendab julgeda vaadata otsa sellele, mis tundub liiga raske. <span class="highlight">Just seetõttu oskan ka Sind hoida</span> - mitte hinnates ega nõu andes, vaid olles Sinuga hoolivalt kohal.</p>
                     
-                    <p>Mind on iseloomustatud kui <span class="highlight">ausat, lugupidavat, põhjalikku ja austavalt otsekohest terapeuti</span>. Minus on ruumi nii sügavusele kui ka mängulisusele – koos leiame kõige sobivama viisi keeruliste olukordade lahti harutamiseks, arvestame alati just seda, mis on <span class="highlight">Sinu jaoks kõige turvalisem ja sobivam</span>.</p>
+                    <p>Mind on iseloomustatud kui <span class="highlight">ausat, lugupidavat ja põhjalikku nõustajat</span>. Minus on ruumi nii sügavusele kui ka mängulisusele. Koos leiame kõige sobivama viisi keeruliste olukordade lahendamiseks, arvestades alati seda, mis on <span class="highlight">Sinu jaoks kõige turvalisem ja sobivam</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Minu teenused</h2>
+            <p class="section-subtitle">Kohtumised, mis toetavad Sinu kasvu ja eneseavastamist</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌱</div>
+                    <h3 class="service-title">Esmatutvus - Tasuta</h3>
+                    <p class="service-description">30-minutiline tutvumiskohtumine, kus saame teineteist tunda ja rääkida Sinu vajadustest. See on võimalus mõista, kas minu lähenemine sobib Sulle.</p>
+                    <div class="service-price">Tasuta</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3 class="service-title">Individuaalne nõustamine</h3>
+                    <p class="service-description">75-minutiline seanss, mis ühendab keha, psüühika ja teadvuse. Core Evolution kehapsühhoteraapiat ja traumaatiliste kogemuste läbitöötamist.</p>
+                    <div class="service-price">65 €</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🌿</div>
+                    <h3 class="service-title">Looduses nõustamine</h3>
+                    <p class="service-description">60-75 minutit looduses, kus sõnad voolavad paremini liikumises. Ühendame rääkimise ja jalutamise pargis või looduses.</p>
+                    <div class="service-price">65 €</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3 class="service-title">Süvaprotsess</h3>
+                    <p class="service-description">Metafoorilised pildikaardid, juhitud kujutlused või sügavamad meelerännakud, et jõuda sügavamale tasandile enda sees.</p>
+                    <div class="service-price">Kokkuleppel</div>
                 </div>
             </div>
         </div>
@@ -783,12 +492,11 @@
     <!-- Video Section -->
     <section class="video-section" id="video">
         <div class="container">
-            <h2 class="section-title">Tutvumine Agnesega</h2>
-            <p style="color: #5a6c5b; font-size: 1.1rem; margin-bottom: 2rem;">Vaata lühikest tutvustavat videot, et saada aimu minu lähenemisest ja tööstiilist.</p>
+            <h2 class="section-title">Tutvumine minuga</h2>
+            <p class="section-subtitle">Vaata lühikest videot, et saada aimu minu lähenemisest ja tööstiilist</p>
+            
             <div class="video-container">
                 <iframe 
-                    width="100%" 
-                    height="450" 
                     src="https://www.youtube.com/embed/IreEQ6liOL0" 
                     title="Tutvumine Agnesega" 
                     frameborder="0" 
@@ -799,95 +507,12 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Kohtumised, mis toetavad elu loomulikku kulgu</h2>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🌱</div>
-                    <h3 class="service-title">Esmatutvus - TASUTA</h3>
-                    <p class="service-description">30-minutiline tutvumiskohtumine hubases kohvikus või rahulikult teraapiaruumis. Räägime Sinu vajadustest ja leiame õige lähenemise.</p>
-                    <div class="service-price">Tasuta</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">💬</div>
-                    <h3 class="service-title">Individuaalne teraapiaseanss</h3>
-                    <p class="service-description">75-minutiline seanss, mis ühendab keha, psüühika ja teadvuse. Core Evolution kehapsühhoteraapiat ja traumaatiliste kogemuste läbitöötamist.</p>
-                    <div class="service-price">65 €</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🌿</div>
-                    <h3 class="service-title">Jalutusteraapia</h3>
-                    <p class="service-description">60-75 minutit looduses, kui sõnad voolavad paremini liikumises. Ühendame rääkimise ja jalutamise pargis või looduses.</p>
-                    <div class="service-price">65 €</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3 class="service-title">Süvaprotsess</h3>
-                    <p class="service-description">Metafoorilised pildikaardid, juhitud kujutlused või sügavamad meelerännakud, et jõuda sügavamale tasandile enda sees ja õppida kuulama oma keha.</p>
-                    <div class="service-price">Kokkuleppel</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Booking Section -->
-    <section class="booking" id="booking">
-        <div class="container">
-            <div class="booking-content">
-                <h2 class="section-title">Broneeri oma aeg</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem;">Alustame tasuta 30-minutilise tutvumiskohtumisega. Vali endale sobiv aeg ja kirjelda lühidalt, millega soovid töötada.</p>
-                
-                <div class="booking-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Nimi *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">E-post *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Telefon</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Teenus *</label>
-                            <select id="service" name="service" required>
-                                <option value="">Vali teenus</option>
-                                <option value="esmatutvus">Esmatutvus (30 min, tasuta)</option>
-                                <option value="teraapia">Individuaalne teraapiaseanss (75 min)</option>
-                                <option value="jalutus">Jalutusteraapia (60-75 min)</option>
-                                <option value="suva">Süvaprotsess</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Lühike kirjeldus *</label>
-                            <textarea id="message" name="message" placeholder="Kirjelda lühidalt, millega soovid töötada või mida ootad kohtumiselt..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Saada broneeringu soov</button>
-                        <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">Võtan Sinuga ühendust 24 tunni jooksul, et kokku leppida sobiv aeg.</p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Võta ühendust</h2>
+            <p class="section-subtitle">Alustame tasuta esmatutvusega. Võta julgesti ühendust - olen siin, et aidata.</p>
+            
             <div class="contact-info">
                 <div class="contact-item">
                     <div class="contact-icon">📧</div>
@@ -911,98 +536,51 @@
                     </div>
                 </div>
             </div>
+            
+            <div style="margin-top: 3rem;">
+                <a href="mailto:info@päriselt.ee" class="cta-button">Saada e-kiri</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-logo">Räägime päriselt.</div>
-        <p>&copy; 2025 päriselt.ee - Kõik õigused kaitstud</p>
-        <p style="margin-top: 0.5rem; opacity: 0.7;">Investeering iseendasse on alati väärtuslik</p>
+        <div class="footer-content">
+            <div class="footer-logo">Agnes</div>
+            <p class="footer-text">Transpersonaalne kehale suunatud nõustaja Tallinnas</p>
+            <p class="footer-text" style="margin-top: 1rem; opacity: 0.6;">Investeering iseendasse on alati väärtuslik</p>
+            <p class="footer-text" style="margin-top: 0.5rem; opacity: 0.6;">&copy; 2025 päriselt.ee</p>
+        </div>
     </footer>
 
     <script>
-        // Enhanced smooth scrolling for anchor links
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Enhanced form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Add loading state
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Saadetakse...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                alert('Tänan Sind! Võtan Sinuga ühendust 24 tunni jooksul, et kokku leppida sobiv aeg.');
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                this.reset();
-            }, 1500);
-        });
-
-        // Enhanced intersection observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('loaded');
-                }
-            });
-        }, observerOptions);
-
-        // Add loading class to elements
-        document.querySelectorAll('.service-card, .about-content, .video-container, .contact-item').forEach(el => {
-            el.classList.add('loading');
-            observer.observe(el);
-        });
-
-        // Parallax effect for hero section
+        // Header scroll effect
         window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = '#ffffff';
+                header.style.backdropFilter = 'none';
             }
         });
-
-        // Add typing effect to main heading
-        const mainHeading = document.querySelector('.main-heading');
-        if (mainHeading) {
-            const text = mainHeading.textContent;
-            mainHeading.textContent = '';
-            mainHeading.style.opacity = '1';
-            
-            let i = 0;
-            const typeWriter = () => {
-                if (i < text.length) {
-                    mainHeading.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
-                }
-            };
-            
-            // Start typing effect after a short delay
-            setTimeout(typeWriter, 500);
-        }
     </script>
 </body>
 </html>
