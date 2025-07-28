@@ -363,7 +363,22 @@
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active::after {
+            transform: rotate(45deg);
         }
         
         .faq-question:hover {
@@ -371,9 +386,17 @@
         }
         
         .faq-answer {
-            padding: 1.5rem 2rem;
+            padding: 0 2rem;
             color: var(--text-dark);
             line-height: 1.7;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 1.5rem 2rem;
+            max-height: 200px;
         }
         
         .faq-answer p {
@@ -616,16 +639,9 @@
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">Kui kaua kestab üks nõustamisseanss?</h3>
+                    <h3 class="faq-question">Kui kaua kestab nõustamine ja kas see aitab traumaatiliste kogemustega?</h3>
                     <div class="faq-answer">
-                        <p>Individuaalne nõustamisseanss kestab 75 minutit, looduses nõustamine 60-75 minutit. Esmatutvus on 30 minutit ja on tasuta. Süvaprotsess võib kesta erinevalt sõltuvalt vajadustest.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <h3 class="faq-question">Kas nõustamine aitab traumaatiliste kogemustega?</h3>
-                    <div class="faq-answer">
-                        <p>Jah, olen kogenud traumaatiliste kogemustega töötamisel. Aitan Sul turvaliselt puutuda kokku valude ja emotsioonidega ning leida viise, kuidas neid lahendada. See aitab Sul leida vabastust ja rahu.</p>
+                        <p>Individuaalne nõustamisseanss kestab 75 minutit, looduses nõustamine 60-75 minutit. Esmatutvus on 30 minutit ja on tasuta. Olen kogenud traumaatiliste kogemustega töötamisel ja aitan Sul turvaliselt puutuda kokku valude ja emotsioonidega ning leida viise, kuidas neid lahendada.</p>
                     </div>
                 </div>
                 
@@ -665,30 +681,16 @@
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">Kas nõustamine aitab stressi ja ärevusega?</h3>
+                    <h3 class="faq-question">Kas nõustamine aitab stressi, ärevuse ja depressiooniga?</h3>
                     <div class="faq-answer">
-                        <p>Jah, transpersonaalne nõustamine on väga tõhus stressi ja ärevuse vähendamisel. Läbi keha suunatud tehnikate õpime tundma ära stressi märgid ja leiame viise, kuidas neid lahendada. See aitab taastada sisemist tasakaalu ja rahu.</p>
+                        <p>Jah, olen kogenud stressi, ärevuse ja depressiooniga töötamisel. Minu lähenemine aitab Sul mõista, miks tunned nii, nagu tunned, ja leida viise, kuidas paremini tunda. Aitan Sul taastada sisemist tasakaalu ja rõõmu elus. Kui vajad, võin soovitada ka psühhiaatri konsultatsiooni.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">Kas saan aidata depressiooni ja masendusega?</h3>
+                    <h3 class="faq-question">Kas nõustamine aitab suhete ja enesehinnangu probleemidega?</h3>
                     <div class="faq-answer">
-                        <p>Jah, olen kogenud depressiooni ja masendusega töötamisel. Minu lähenemine aitab avastada depressiooni põhjuseid ja leida viise, kuidas taastada rõõmu ja tähendust elus. Kui vajad, võin soovitada ka psühhiaatri konsultatsiooni.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <h3 class="faq-question">Kas nõustamine aitab suhete probleemidega?</h3>
-                    <div class="faq-answer">
-                        <p>Jah, suhete probleemid on sageli seotud meie sisemiste mustrite ja enesehinnanguga. Läbi nõustamise saame avastada, kuidas meie mineviku kogemused mõjutavad praeguseid suhteid ja õpime looma tervislikumaid suhteid.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <h3 class="faq-question">Kas nõustamine aitab enesehinnangu probleemidega?</h3>
-                    <div class="faq-answer">
-                        <p>Absoluutselt. Enesehinnangu probleemid on sageli juurdunud meie kehas ja emotsioonides. Läbi keha suunatud nõustamise saame avastada ja lahendada need mustrid, mis takistavad meil tunda ennast väärtuslikuna ja piisavana.</p>
+                        <p>Jah, suhete probleemid ja enesehinnangu probleemid on sageli seotud. Läbi nõustamise saame avastada, kuidas meie mineviku kogemused mõjutavad praeguseid suhteid ja enesehinnangut. Aitan Sul õppida looma tervislikumaid suhteid ja tunda ennast väärtuslikuna.</p>
                     </div>
                 </div>
                 
@@ -789,6 +791,26 @@
                 header.style.background = '#ffffff';
                 header.style.backdropFilter = 'none';
             }
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
