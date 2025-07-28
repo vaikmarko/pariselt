@@ -344,16 +344,7 @@
             transform: translateY(-2px);
         }
         
-        .service-cta-disabled {
-            background: #e0e0e0;
-            color: #666;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: not-allowed;
-            display: inline-block;
-        }
+
         
         .service-card[onclick] {
             cursor: pointer;
@@ -621,7 +612,7 @@
             <p class="section-subtitle">Lihtne ja tõhus abi, kui elu tundub liiga raske</p>
             
             <div class="services-grid">
-                <div class="service-card" onclick="openBooking()">
+                <div class="service-card" onclick="openBooking('esmatutvus')">
                     <div class="service-icon">🌱</div>
                     <h3 class="service-title">Esmatutvus - Tasuta</h3>
                     <p class="service-description">30-minutiline tutvumiskohtumine, kus saame teineteist tunda ja rääkida Sinu vajadustest. See on võimalus mõista, kas minu lähenemine sobib Sulle.</p>
@@ -629,7 +620,7 @@
                     <div class="service-cta">Broneeri →</div>
                 </div>
                 
-                <div class="service-card" onclick="openBooking()">
+                <div class="service-card" onclick="openBooking('individuaalne')">
                     <div class="service-icon">💬</div>
                     <h3 class="service-title">Individuaalne nõustamine</h3>
                     <p class="service-description">75-minutiline seanss, kus saame rääkida ja leida lahendusi Sinu probleemidele. Aitan Sul leida rahu ja tasakaalu oma elus.</p>
@@ -637,7 +628,7 @@
                     <div class="service-cta">Broneeri →</div>
                 </div>
                 
-                <div class="service-card" onclick="openBooking()">
+                <div class="service-card" onclick="openBooking('looduses')">
                     <div class="service-icon">🌿</div>
                     <h3 class="service-title">Looduses nõustamine</h3>
                     <p class="service-description">60-75 minutit looduses jalutades ja rääkides. Liikumine aitab sõnadel paremini voolata ja loodus pakub rahulikku keskkonda.</p>
@@ -645,12 +636,12 @@
                     <div class="service-cta">Broneeri →</div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card" onclick="scrollToContact()">
                     <div class="service-icon">🎨</div>
                     <h3 class="service-title">Süvaprotsess</h3>
                     <p class="service-description">Erilised meetodid, mis aitavad Sul jõuda sügavamale tasandile enda sees ja leida vastuseid, mida tavaline rääkimine ei paku.</p>
                     <div class="service-price">Kokkuleppel</div>
-                    <div class="service-cta-disabled">Kontakt →</div>
+                    <div class="service-cta">Kontakt →</div>
                 </div>
             </div>
         </div>
@@ -816,9 +807,40 @@
             });
         });
         
-        // Booking function
-        function openBooking() {
-            window.open('https://calendly.com/agnes-pariselt', '_blank');
+        // Booking function with specific service
+        function openBooking(service) {
+            let url = 'https://calendly.com/agnes-pariselt';
+            
+            // Add specific service parameters based on your Calendly setup
+            // You'll need to replace these with your actual Calendly event type URLs
+            switch(service) {
+                case 'esmatutvus':
+                    url = 'https://calendly.com/agnes-pariselt/esmatutvus'; // Replace with actual URL
+                    break;
+                case 'individuaalne':
+                    url = 'https://calendly.com/agnes-pariselt/individuaalne-noustamine'; // Replace with actual URL
+                    break;
+                case 'looduses':
+                    url = 'https://calendly.com/agnes-pariselt/looduses-noustamine'; // Replace with actual URL
+                    break;
+                default:
+                    url = 'https://calendly.com/agnes-pariselt';
+            }
+            
+            window.open(url, '_blank');
+        }
+        
+        // Scroll to contact function
+        function scrollToContact() {
+            const contactSection = document.querySelector('#contact');
+            if (contactSection) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = contactSection.offsetTop - headerHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
         }
     </script>
 </body>
