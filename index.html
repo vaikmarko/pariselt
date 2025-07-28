@@ -324,128 +324,48 @@
             font-size: 1.3rem;
             color: var(--secondary);
             font-weight: 600;
+            margin-bottom: 1rem;
         }
         
-        /* Booking Section */
-        .booking {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
-            text-align: center;
-            position: relative;
-        }
-        
-        .booking::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23f8f9fa" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            pointer-events: none;
-        }
-        
-        .booking-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .booking-intro {
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: var(--bg-white);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px var(--shadow);
-            border: 1px solid var(--border);
-        }
-        
-        .booking-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .booking-step {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: var(--bg-light);
-            border-radius: 12px;
-            border-left: 4px solid var(--secondary);
-        }
-        
-        .step-number {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
+        .service-cta {
             background: var(--secondary);
             color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 0.9rem;
-        }
-        
-        .step-text {
             font-size: 0.95rem;
-            color: var(--text-dark);
-            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
         }
         
-        .booking-calendar {
-            margin-top: 2rem;
-            border-radius: 20px;
-            overflow: hidden;
+        .service-cta:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .service-cta-disabled {
+            background: #e0e0e0;
+            color: #666;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: not-allowed;
+            display: inline-block;
+        }
+        
+        .service-card[onclick] {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card[onclick]:hover {
+            transform: translateY(-8px);
             box-shadow: 0 25px 50px var(--shadow);
-            background: white;
-            border: 1px solid var(--border);
-            position: relative;
         }
         
-        .booking-calendar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            z-index: 2;
-        }
-        
-        .booking-calendar iframe {
-            width: 100%;
-            height: 750px;
-            border: none;
-            display: block;
-        }
-        
-        .booking-note {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: var(--bg-light);
-            border-radius: 12px;
-            border-left: 4px solid var(--primary);
-            text-align: left;
-        }
-        
-        .booking-note h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .booking-note p {
-            color: var(--text-light);
-            margin: 0;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
+
         
         /* Video Section */
         .video-section {
@@ -625,14 +545,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .booking-steps {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .booking-calendar iframe {
-                height: 600px;
-            }
+
             
             .contact-info {
                 flex-direction: column;
@@ -654,7 +567,6 @@
             <ul class="nav-links">
                 <li><a href="#about">Minust</a></li>
                 <li><a href="#services">Teenused</a></li>
-                <li><a href="#booking">Broneeri</a></li>
                 <li><a href="#video">Video</a></li>
                 <li><a href="#faq">KKK</a></li>
                 <li><a href="#contact">Kontakt</a></li>
@@ -669,7 +581,7 @@
                 <h1>Räägime päriselt</h1>
                 <p class="subtitle">Psühholoogiline nõustaja Tallinnas</p>
                 <p class="description">Olen Agnes Vaik ja aitan Sul leida rahu, kui elu tundub liiga raske. Kui tunned stressi, ärevust, masendust või lihtsalt ei tea, kuidas edasi minna - olen siin, et aidata. Esimene kohtumine on tasuta.</p>
-                <a href="#booking" class="cta-button">Broneeri tasuta esmatutvus</a>
+                <a href="javascript:void(0)" onclick="openBooking()" class="cta-button">Broneeri tasuta esmatutvus</a>
             </div>
             <div class="hero-image">
                 <div class="profile-photo">
@@ -709,25 +621,28 @@
             <p class="section-subtitle">Lihtne ja tõhus abi, kui elu tundub liiga raske</p>
             
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" onclick="openBooking()">
                     <div class="service-icon">🌱</div>
                     <h3 class="service-title">Esmatutvus - Tasuta</h3>
                     <p class="service-description">30-minutiline tutvumiskohtumine, kus saame teineteist tunda ja rääkida Sinu vajadustest. See on võimalus mõista, kas minu lähenemine sobib Sulle.</p>
                     <div class="service-price">Tasuta</div>
+                    <div class="service-cta">Broneeri →</div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card" onclick="openBooking()">
                     <div class="service-icon">💬</div>
                     <h3 class="service-title">Individuaalne nõustamine</h3>
                     <p class="service-description">75-minutiline seanss, kus saame rääkida ja leida lahendusi Sinu probleemidele. Aitan Sul leida rahu ja tasakaalu oma elus.</p>
                     <div class="service-price">65 €</div>
+                    <div class="service-cta">Broneeri →</div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card" onclick="openBooking()">
                     <div class="service-icon">🌿</div>
                     <h3 class="service-title">Looduses nõustamine</h3>
                     <p class="service-description">60-75 minutit looduses jalutades ja rääkides. Liikumine aitab sõnadel paremini voolata ja loodus pakub rahulikku keskkonda.</p>
                     <div class="service-price">65 €</div>
+                    <div class="service-cta">Broneeri →</div>
                 </div>
                 
                 <div class="service-card">
@@ -735,56 +650,13 @@
                     <h3 class="service-title">Süvaprotsess</h3>
                     <p class="service-description">Erilised meetodid, mis aitavad Sul jõuda sügavamale tasandile enda sees ja leida vastuseid, mida tavaline rääkimine ei paku.</p>
                     <div class="service-price">Kokkuleppel</div>
+                    <div class="service-cta-disabled">Kontakt →</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Booking Section -->
-    <section class="booking" id="booking">
-        <div class="container">
-            <h2 class="section-title">Broneeri kohtumine</h2>
-            <p class="section-subtitle">Lihtne ja kiire broneerimine - vali sobiv aeg ja alusta oma teekonda</p>
-            
-            <div class="booking-container">
-                <div class="booking-intro">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.3rem;">Kuidas broneerimine toimub?</h3>
-                    
-                    <div class="booking-steps">
-                        <div class="booking-step">
-                            <div class="step-number">1</div>
-                            <div class="step-text">Vali sobiv seanss</div>
-                        </div>
-                        <div class="booking-step">
-                            <div class="step-number">2</div>
-                            <div class="step-text">Vali sobiv kuupäev ja aeg</div>
-                        </div>
-                        <div class="booking-step">
-                            <div class="step-number">3</div>
-                            <div class="step-text">Täida oma kontaktandmed</div>
-                        </div>
-                        <div class="booking-step">
-                            <div class="step-number">4</div>
-                            <div class="step-text">Saad kinnituse e-mailile</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="booking-calendar">
-                    <iframe 
-                        src="https://calendly.com/agnes-pariselt" 
-                        title="Broneeri kohtumine Agnesega"
-                        frameborder="0">
-                    </iframe>
-                </div>
-                
-                <div class="booking-note">
-                    <h4>💡 Kas teadsid?</h4>
-                    <p>Esimene kohtumine on alati tasuta ja kestab 30 minutit. See on võimalus meil teineteist tunda ja mõista, kas minu lähenemine sobib Sulle. Broneerimine ei kohusta midagi.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Video Section -->
     <section class="video-section" id="video">
@@ -943,6 +815,11 @@
                 }
             });
         });
+        
+        // Booking function
+        function openBooking() {
+            window.open('https://calendly.com/agnes-pariselt', '_blank');
+        }
     </script>
 </body>
 </html>
