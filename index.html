@@ -438,6 +438,50 @@
             margin: 0;
         }
         
+        /* Qualifications Section */
+        .qualifications {
+            padding: 6rem 2rem;
+            background: var(--bg-white);
+        }
+        
+        .qualifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .qualification-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .qualification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .qualification-card h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .qualification-details {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+        
+        .qualification-details:last-child {
+            margin-bottom: 0;
+        }
+        
         .video-container {
             max-width: 800px;
             margin: 2rem auto 0;
@@ -536,7 +580,14 @@
                 grid-template-columns: 1fr;
             }
             
-
+            .qualifications-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .qualification-card {
+                padding: 1.5rem;
+            }
             
             .contact-info {
                 flex-direction: column;
@@ -565,6 +616,7 @@
                 <li><a href="#services">Teenused</a></li>
                 <li><a href="#video">Video</a></li>
                 <li><a href="#faq">KKK</a></li>
+                <li><a href="#qualifications">Koolitused</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
         </nav>
@@ -723,13 +775,77 @@
                 </div>
             </div>
         </div>
-    </section>
+            </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
+        <!-- Qualifications Section -->
+        <section class="qualifications" id="qualifications">
+            <div class="container">
+                <h2 class="section-title">Minu kogemus ja koolitused</h2>
+                <p class="section-subtitle">Põhjalik haridus ja pidev täiendamine tagavad professionaalse kvaliteedi</p>
+                
+                <div class="qualifications-grid">
+                    <div class="qualification-card">
+                        <h3>Transpersonaalse psühholoogia ja hüpnoteraapia erakool</h3>
+                        <p class="qualification-details">Koolitusluba nr 6238 HTM</p>
+                        <p class="qualification-details">Transpersonaalne nõustaja (1128 akadeemilist tundi, 3 aastat)</p>
+                    </div>
+                    
+                    <div class="qualification-card">
+                        <h3>International Institute for Core Evolution</h3>
+                        <p class="qualification-details">CoreSoma programm, Siegmar Gerken, Ph.D, ECP, HP</p>
+                        <p class="qualification-details">Integratiivne kehapõhine ja mindfulness-põhine teraapia (890 akadeemilist tundi, 3 aastat)</p>
+                        <p class="qualification-details">Hetkel superviseeritav nõustaja</p>
+                    </div>
+                    
+                    <div class="qualification-card">
+                        <h3>Erasmus+ KA1 koolitus</h3>
+                        <p class="qualification-details">Teacher Wellness & Coaching: Self-Care Strategies for Success (42 akadeemilist tundi)</p>
+                    </div>
+                    
+                    <div class="qualification-card">
+                        <h3>Balti Kriminaalpreventsiooni ja Sotsiaalse Rehabilitatsiooni Instituut</h3>
+                        <p class="qualification-details">Keili Rander, psühholoog, pereterapeut</p>
+                        <p class="qualification-details">Tugiisiku koolitus (90 akadeemilist tundi)</p>
+                    </div>
+                    
+                    <div class="qualification-card">
+                        <h3>Conscious Body and Voice Dialogue Institute</h3>
+                        <p class="qualification-details">Judith Hendin, PhD</p>
+                        <p class="qualification-details">Töötamine füüsiliste sümptomite ja traumaga – teadliku keha traumakoolitus (48 akadeemilist tundi)</p>
+                    </div>
+                    
+                    <div class="qualification-card">
+                        <h3>Transpersonal OÜ</h3>
+                        <p class="qualification-details">Keha-Meele meditsiin ja tervenemise reaktsioon, transpersonaalne coaching (40 akadeemilist tundi)</p>
+                        <p class="qualification-details">Nimrod Sheiman – Israel's Center for Mindfulness in Education asutaja ja juht</p>
+                    </div>
+                    
+                    <div class="qualification-card">
+                        <h3>Transpersonal OÜ</h3>
+                        <p class="qualification-details">„Meie keha kui sisemise mina peegeldus"</p>
+                        <p class="qualification-details">Jure Biechonski, MSc (24 akadeemilist tundi)</p>
+                    </div>
+                    
+                    <div class="qualification-card">
+                        <h3>Loov Ruum koolituskeskus</h3>
+                        <p class="qualification-details">Anneli Valdmann – vastutav koolitaja ja superviisor</p>
+                        <p class="qualification-details">Kogemusnõustaja baaskoolitus ja täiendõpe, 200 akadeemilist tundi</p>
+                    </div>
+                    
+                    <div class="qualification-card">
+                        <h3>Progress Counselling LTD</h3>
+                        <p class="qualification-details">Tim Chiswell</p>
+                        <p class="qualification-details">Ärevuse ja paanikahoogude koolitus (6 akadeemilist tundi)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Võta ühendust</h2>
-                            <p class="section-subtitle">Kui elu tundub liiga raske - olen siin, et aidata. Esimene tutvumiskohtumine on tasuta.</p>
+                            <p class="section-subtitle">Kui elu tundub liiga raske, olen siin, et aidata. Esimene tutvumiskohtumine on tasuta.</p>
             
             <div class="contact-info">
                                     <div class="contact-item">
@@ -765,7 +881,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">Päriselt.</div>
-            <p class="footer-text">Agnes Vaik - Psühholoogiline nõustaja Tallinnas</p>
+                            <p class="footer-text">Agnes Vaik - psühholoogiline nõustaja Tallinnas ja veebis</p>
             <p class="footer-text" style="margin-top: 1rem; opacity: 0.6;">Investeering iseendasse on alati väärtuslik</p>
             <p class="footer-text" style="margin-top: 0.5rem; opacity: 0.6;">&copy; 2025 päriselt.ee</p>
         </div>
