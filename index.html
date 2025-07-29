@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWJQBSSV5E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VWJQBSSV5E');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agnes Vaik - Psühholoogiline Nõustaja | päriselt.ee</title>
@@ -676,7 +686,7 @@
         <div class="container">
             <h2 class="section-title">Tutvumine Agnesega</h2>
             <p class="section-subtitle">Vaata lühikest videot, et saada aimu minu lähenemisest ja tööstiilist</p>
-            
+                
             <div class="video-container">
                                     <iframe 
                         src="https://www.youtube.com/embed/kCrpHlzFG28" 
@@ -685,7 +695,7 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen>
                 </iframe>
-            </div>
+                        </div>
         </div>
     </section>
 
@@ -701,29 +711,29 @@
                     <div class="faq-answer">
                         <p>Nõustamine aitab Sul mõista, miks tunned nii, nagu tunned, ja leida viise, kuidas paremini tunda. Ma kuulan ja aitan Sul leida lahendusi, mis Sulle sobivad. Koos leiame viise, kuidas leida rahu ja tasakaalu oma elus.</p>
                     </div>
-                </div>
-                
+                        </div>
+                        
                 <div class="faq-item">
                     <h3 class="faq-question">Kas nõustamine aitab stressi, ärevuse ja depressiooni vastu?</h3>
                     <div class="faq-answer">
                         <p>Jah, olen kogenud lahendusi stressi, ärevuse ja depressiooniga töötamisel. Minu lähenemine aitab Sul mõista, miks tunned nii, nagu tunned, ja leida viise, kuidas end paremini tunda. Olen kogenud spetsialist traumaatiliste kogemustega töötamisel.</p>
                     </div>
-                </div>
-                
+                        </div>
+                        
                 <div class="faq-item">
                     <h3 class="faq-question">Kui kaua kestab nõustamine ja kas see aitab traumaatiliste kogemustega?</h3>
                     <div class="faq-answer">
                         <p>Individuaalne nõustamisseanss kestab 1,5 tundi, veebinõustamine 1,5 tundi. Esmatutvus on 15 minutit ja on tasuta. Olen kogenud traumaatiliste kogemustega töötamisel ja aitan Sul turvaliselt puutuda kokku valude ja emotsioonidega ning leida viise, kuidas neid lahendada.</p>
                     </div>
-                </div>
-                
+                        </div>
+                        
                 <div class="faq-item">
                     <h3 class="faq-question">Kuidas tean, kas nõustamine sobib mulle?</h3>
                     <div class="faq-answer">
                         <p>Parim viis on broneerida tasuta esmatutvus. Seal saame teineteist tundma õppida, rääkida Sinu vajadustest ja mõista, kas minu lähenemine sobib Sulle. Esmatutvus ei kohusta midagi.</p>
                     </div>
-                </div>
-                
+                        </div>
+                        
                 <div class="faq-item">
                     <h3 class="faq-question">Miks peaksin valima just Sinu?</h3>
                     <div class="faq-answer">
@@ -732,22 +742,22 @@
                 </div>
             </div>
         </div>
-            </section>
+    </section>
 
-        <!-- Contact Section -->
-        <section class="contact" id="contact">
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Võta ühendust</h2>
                             <p class="section-subtitle">Kui elu tundub liiga raske, olen siin, et aidata. Esimene tutvumiskohtumine on tasuta.</p>
             
             <div class="contact-info">
-                                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <strong>E-post</strong><br>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <strong>E-post</strong><br>
                             agnes.pariselt@gmail.com
-                        </div>
                     </div>
+                </div>
                 <div class="contact-item">
                     <div class="contact-icon">📱</div>
                     <div>
@@ -810,13 +820,13 @@
                 header.style.backdropFilter = 'none';
             }
         });
-
+            
         // FAQ accordion functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
                 const isActive = question.classList.contains('active');
-                
+            
                 // Close all other FAQ items
                 document.querySelectorAll('.faq-question').forEach(q => {
                     q.classList.remove('active');
@@ -830,7 +840,7 @@
                 }
             });
         });
-        
+
         // Booking function with specific service
         function openBooking(service) {
             let url = 'https://calendly.com/agnes-pariselt';
@@ -855,7 +865,7 @@
             
             window.open(url, '_blank');
         }
-        
+
         // Scroll to contact function
         function scrollToContact() {
             const contactSection = document.querySelector('#contact');
