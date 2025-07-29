@@ -615,33 +615,33 @@
                 <div class="service-card" onclick="openBooking('esmatutvus')">
                     <div class="service-icon">🌱</div>
                     <h3 class="service-title">Esmatutvus - Tasuta</h3>
-                    <p class="service-description">30-minutiline tutvumiskohtumine, kus saame teineteist tunda ja rääkida Sinu vajadustest. See on võimalus mõista, kas minu lähenemine sobib Sulle.</p>
+                    <p class="service-description">15-minutiline tutvumiskohtumine Google Meet keskkonnas, kus saame teineteist tunda ja rääkida Sinu vajadustest. See on võimalus mõista, kas minu lähenemine sobib Sulle. Link saadetakse peale broneerimist.</p>
                     <div class="service-price">Tasuta</div>
                     <div class="service-cta">Broneeri →</div>
                 </div>
                 
+                <div class="service-card" onclick="openBooking('veebinoustamine')">
+                    <div class="service-icon">💻</div>
+                    <h3 class="service-title">Veebinõustamine</h3>
+                    <p class="service-description">1,5-tunnine nõustamisseanss Google Meet keskkonnas, kus saame rääkida ja leida lahendusi Sinu probleemidele. Mugav ja turvaline keskkond, kus saad olla oma kodus. Link saadetakse peale broneerimist.</p>
+                    <div class="service-price">65 €</div>
+                    <div class="service-cta">Broneeri →</div>
+                </div>
+                
                 <div class="service-card" onclick="openBooking('individuaalne')">
-                    <div class="service-icon">💬</div>
-                    <h3 class="service-title">Individuaalne nõustamine</h3>
-                    <p class="service-description">75-minutiline seanss, kus saame rääkida ja leida lahendusi Sinu probleemidele. Aitan Sul leida rahu ja tasakaalu oma elus.</p>
-                    <div class="service-price">65 €</div>
+                    <div class="service-icon">🏢</div>
+                    <h3 class="service-title">Individuaalne nõustamine kabinetis</h3>
+                    <p class="service-description">1,5-tunnine nõustamisseanss minu kabinetis Tallinnas. Turvaline ja rahulik keskkond, kus saame sügavalt rääkida ja leida lahendusi Sinu probleemidele. Aitan Sul leida rahu ja tasakaalu oma elus.</p>
+                    <div class="service-price">75 €</div>
                     <div class="service-cta">Broneeri →</div>
                 </div>
                 
-                <div class="service-card" onclick="openBooking('looduses')">
-                    <div class="service-icon">🌿</div>
-                    <h3 class="service-title">Looduses nõustamine</h3>
-                    <p class="service-description">60-75 minutit looduses jalutades ja rääkides. Liikumine aitab sõnadel paremini voolata ja loodus pakub rahulikku keskkonda.</p>
-                    <div class="service-price">65 €</div>
+                <div class="service-card" onclick="openBooking('suhtenoustamine')">
+                    <div class="service-icon">💕</div>
+                    <h3 class="service-title">Suhtenõustamine täiskasvanutele</h3>
+                    <p class="service-description">1,5-tunnine suhtenõustamisseanss kabinetis, mis aitab Sul paremini mõista ja parandada oma suhteid. Kogenud suhete probleemide lahendamisel ja aitan Sul looma tervislikumaid suhteid.</p>
+                    <div class="service-price">100 €</div>
                     <div class="service-cta">Broneeri →</div>
-                </div>
-                
-                <div class="service-card" onclick="scrollToContact()">
-                    <div class="service-icon">🎨</div>
-                    <h3 class="service-title">Süvaprotsess</h3>
-                    <p class="service-description">Erilised meetodid, mis aitavad Sul jõuda sügavamale tasandile enda sees ja leida vastuseid, mida tavaline rääkimine ei paku.</p>
-                    <div class="service-price">Kokkuleppel</div>
-                    <div class="service-cta">Kontakt →</div>
                 </div>
             </div>
         </div>
@@ -816,11 +816,14 @@
                 case 'esmatutvus':
                     url = 'https://calendly.com/agnes-pariselt/tasuta-esmakohtumine';
                     break;
+                case 'veebinoustamine':
+                    url = 'https://calendly.com/agnes-pariselt/looduses-noustamine';
+                    break;
                 case 'individuaalne':
                     url = 'https://calendly.com/agnes-pariselt/30min';
                     break;
-                case 'looduses':
-                    url = 'https://calendly.com/agnes-pariselt/looduses-noustamine';
+                case 'suhtenoustamine':
+                    url = 'https://calendly.com/agnes-pariselt/suhtenoustamine-taiskasvanutele';
                     break;
                 default:
                     url = 'https://calendly.com/agnes-pariselt';
