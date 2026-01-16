@@ -918,27 +918,24 @@
 
         // Booking function with specific service
         function openBooking(service) {
-            let url = 'https://calendly.com/agnes-pariselt';
+            // Tasuta esmatutvus - Calendly
+            // Teised teenused - e-mail (kuna Calendly tasuta plaan lubab ainult 1 teenust)
             
-            // Direct links to specific Calendly services
-            switch(service) {
-                case 'esmatutvus':
-                    url = 'https://calendly.com/agnes-pariselt/tasuta-esmakohtumine';
-                    break;
-                case 'veebinoustamine':
-                    url = 'https://calendly.com/agnes-pariselt/veebinoustamine';
-                    break;
-                case 'individuaalne':
-                    url = 'https://calendly.com/agnes-pariselt/individuaalne-noustamine';
-                    break;
-                case 'suhtenoustamine':
-                    url = 'https://calendly.com/agnes-pariselt/suhtenoustamine';
-                    break;
-                default:
-                    url = 'https://calendly.com/agnes-pariselt';
+            const serviceNames = {
+                'esmatutvus': 'Tasuta esmatutvus',
+                'veebinoustamine': 'Veebinõustamine (65€)',
+                'individuaalne': 'Individuaalne nõustamine kabinetis (75€)',
+                'suhtenoustamine': 'Suhtenõustamine täiskasvanutele (100€)'
+            };
+            
+            if (service === 'esmatutvus') {
+                window.open('https://calendly.com/agnes-pariselt/tasuta-esmakohtumine', '_blank');
+            } else {
+                // E-maili link teenuse nimega
+                const subject = encodeURIComponent('Broneeringu päring: ' + serviceNames[service]);
+                const body = encodeURIComponent('Tere Agnes!\n\nSoovin broneerida: ' + serviceNames[service] + '\n\nMinu eelistatud ajad:\n- \n- \n\nNimi: \nTelefon: \n\nParimate soovidega');
+                window.location.href = 'mailto:agnes.pariselt@gmail.com?subject=' + subject + '&body=' + body;
             }
-            
-            window.open(url, '_blank');
         }
 
         // Scroll to contact function
